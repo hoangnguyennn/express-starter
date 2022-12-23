@@ -1,29 +1,34 @@
 ## Express Starter
 
+### Requirements
+
+- Install `node v14`
+- Install `yarn`
+
 ### Commands
 
 Run dev server:
 
 ```bash
-yarn dev
+$ yarn dev
 ```
 
 Run build:
 
 ```bash
-yarn build
+$ yarn build
 ```
 
 Run production server:
 
 ```bash
-yarn start
+$ yarn start
 ```
 
 Run linting:
 
 ```bash
-yarn lint
+$ yarn lint # show eslint errors
 
-yarn lint:fix
+$ yarn lint:fix # fix eslint errors
 ```
