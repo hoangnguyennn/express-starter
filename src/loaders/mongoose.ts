@@ -1,7 +1,8 @@
-import mongoose from 'mongoose';
-import env from '~/configs/env';
+import mongoose from 'mongoose'
+import env from '~/configs/env'
 
 export default async () => {
-  await mongoose.connect(env.mongoUri);
-  console.log('Connected to MongoDB');
-};
+  console.log('MongoDB is connecting...')
+  await mongoose.connect(env.mongoUri)
+  console.log('MongoDB is connected')
+}

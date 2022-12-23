@@ -1,35 +1,52 @@
-import User from '~/models/user.model';
-import bcryptUtil from '~/utils/bcrypt.util';
-import tokenUtil from '~/utils/token.util';
+import { badRequest, notFound } from '~/helpers/commonResponse'
+import { ILoginRequest, IRegisterRequest } from '~/interfaces'
+import User from '~/models/user.model'
+import bcryptUtil from '~/utils/bcrypt.util'
+import tokenUtil from '~/utils/token.util'
 
 const AuthService = {
-  login: async (username: string, password: string) => {
-    const user = await User.findOne({ username });
+  login: async (loginRequest: ILoginRequest) => {
+    const user = await User.findOne({ username: loginRequest.username })
 
     if (!user) {
-      throw new Error('User not found');
+      return notFound('User not found')
     }
 
-    if (!bcryptUtil.equal(password, user.hashedPassword)) {
-      throw new Error('Password is incorrect');
+    if (!bcryptUtil.equal(loginRequest.password, user.hashedPassword)) {
+      return badRequest('Password is incorrect')
     }
 
-    const token = tokenUtil.generateToken({ userId: user._id.toString() });
-    return { token };
+    const token = tokenUtil.generateToken({ userId: user._id.toString() })
+    return { token }
   },
-  register: async (username: string, password: string) => {
-    const user = await User.findOne({ username });
+
+  register: async (registerRequest: IRegisterRequest) => {
+    const user = await User.findOne({ username: registerRequest.username })
 
     if (user) {
-      throw new Error('User already exists');
+      return badRequest('User already exists')
     }
 
-    const hashedPassword = bcryptUtil.getHashed(password);
-    const newUser = await User.create({ username, hashedPassword });
+    const hashedPassword = await bcryptUtil.getHashed(registerRequest.password)
+    const newUser = await User.create({
+      username: registerRequest.username,
+      hashedPassword,
+      fullName: registerRequest.fullName
+    })
 
-    const token = tokenUtil.generateToken({ userId: newUser._id.toString() });
-    return { token };
+    const token = tokenUtil.generateToken({ userId: newUser._id.toString() })
+    return { token }
   },
-};
 
-export default AuthService;
+  me: async (userId: string) => {
+    const user = await User.findById(userId)
+
+    if (!user) {
+      return notFound('User not found')
+    }
+
+    return user
+  }
+}
+
+export default AuthService
