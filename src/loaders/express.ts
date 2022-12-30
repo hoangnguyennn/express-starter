@@ -1,3 +1,4 @@
+import { errors } from 'celebrate'
 import { Application, json, urlencoded } from 'express'
 import apiRoutes from '~/apis/routes'
 import env from '~/configs/env'
@@ -14,6 +15,9 @@ export default async ({ app }: { app: Application }) => {
 
   // load routes
   app.use(env.apiPrefix, apiRoutes)
+
+  // celebrate error handler
+  app.use(errors())
 
   // load error handler
   app.use(errorHandler)
