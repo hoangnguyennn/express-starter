@@ -6,7 +6,7 @@ const userSchema = new Schema<IUser>(
   {
     username: { type: String, required: true },
     hashedPassword: { type: String, required: true },
-    fullName: { type: String, required: true },
+    fullName: { type: String, required: true, index: true },
     deletedAt: { type: Date, required: false }
   },
   {
@@ -16,5 +16,7 @@ const userSchema = new Schema<IUser>(
     }
   }
 )
+
+userSchema.index({ fullName: 'text' })
 
 export default model<IUser>(CollectionNames.USER, userSchema)
