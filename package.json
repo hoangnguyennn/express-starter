@@ -7,10 +7,8 @@
     "dev": "tsnd -r tsconfig-paths/register src/server.ts",
     "build": "rm -rf dist && tsc && tsc-alias",
     "start": "cross-env NODE_ENV=production node dist/server.js",
-    "prettier": "npx prettier src --check",
-    "prettier:fix": "yarn prettier --write",
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "yarn prettier:fix && yarn lint --fix",
+    "lint:fix": "yarn lint --fix",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -32,9 +30,11 @@
     "cross-env": "7.0.3",
     "eslint": "8.30.0",
     "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
     "husky": "8.0.2",
     "lint-staged": "13.1.0",
     "prettier": "2.8.1",
+    "prettier-eslint": "15.0.1",
     "ts-node-dev": "2.0.0",
     "tsc-alias": "1.8.2",
     "tsconfig-paths": "4.1.1",
