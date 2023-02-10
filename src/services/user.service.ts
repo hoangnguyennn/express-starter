@@ -1,6 +1,4 @@
 import { PipelineStage } from 'mongoose'
-import { IUserFilter } from '~/interfaces'
-import { IUser } from '~/interfaces/IDocument'
 import User from '~/models/user.model'
 import {
   getLimit,
@@ -11,7 +9,7 @@ import {
 } from '~/utils/getter.util'
 
 const UserService = {
-  getList: async (dataListFilter: IUserFilter) => {
+  getList: async (dataListFilter: Types.IUserFilter) => {
     const limit = getLimit(dataListFilter.limit)
     const offset = getOffset(dataListFilter.offset)
     const sortBy = getSortBy(dataListFilter.sortBy)
@@ -73,7 +71,7 @@ const UserService = {
       }).exec()
     ])
 
-    return { data: users as IUser[], total: count[0]?.total || 0 }
+    return { data: users as Types.IUser[], total: count[0]?.total || 0 }
   }
 }
 

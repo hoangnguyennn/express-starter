@@ -1,7 +1,4 @@
-import { IUserResponse } from '~/interfaces'
-import { IUser } from '~/interfaces/IDocument'
-
-export const mapUserToResponse = (user: IUser): IUserResponse => {
+export const mapUserToResponse = (user: Types.IUser): Types.IUserResponse => {
   return {
     id: user._id.toString(),
     username: user.username,

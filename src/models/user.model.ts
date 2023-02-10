@@ -1,8 +1,7 @@
 import { Schema, model } from 'mongoose'
-import { IUser } from '~/interfaces/IDocument'
-import { CollectionNames } from '~/interfaces/enums'
+import { CollectionNames } from '~/constants'
 
-const userSchema = new Schema<IUser>(
+const userSchema = new Schema<Types.IUser>(
   {
     username: { type: String, required: true },
     hashedPassword: { type: String, required: true },
@@ -19,4 +18,4 @@ const userSchema = new Schema<IUser>(
 
 userSchema.index({ fullName: 'text' })
 
-export default model<IUser>(CollectionNames.USER, userSchema)
+export default model<Types.IUser>(CollectionNames.USER, userSchema)

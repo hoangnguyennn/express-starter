@@ -1,15 +1,14 @@
 import jwt from 'jsonwebtoken'
 
 import env from '~/configs/env'
-import { ITokenPayload } from '~/interfaces'
 
-const generateToken = (payload: ITokenPayload) => {
+const generateToken = (payload: Types.ITokenPayload) => {
   return jwt.sign(payload, env.tokenSecret, { expiresIn: env.tokenExpiresIn })
 }
 
-const decodeToken = (token: string): ITokenPayload | null => {
+const decodeToken = (token: string): Types.Nullable<Types.ITokenPayload> => {
   try {
-    const decoded = jwt.verify(token, env.tokenSecret) as ITokenPayload
+    const decoded = jwt.verify(token, env.tokenSecret) as Types.ITokenPayload
     return decoded
   } catch {
     return null

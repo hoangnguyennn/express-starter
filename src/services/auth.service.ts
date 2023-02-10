@@ -1,11 +1,10 @@
 import { badRequest, notFound } from '~/helpers/commonResponse'
-import { ILoginRequest, IRegisterRequest } from '~/interfaces'
 import User from '~/models/user.model'
 import bcryptUtil from '~/utils/bcrypt.util'
 import tokenUtil from '~/utils/token.util'
 
 const AuthService = {
-  login: async (loginRequest: ILoginRequest) => {
+  login: async (loginRequest: Types.ILoginRequest) => {
     const user = await User.findOne({ username: loginRequest.username })
 
     if (!user) {
@@ -20,7 +19,7 @@ const AuthService = {
     return { token }
   },
 
-  register: async (registerRequest: IRegisterRequest) => {
+  register: async (registerRequest: Types.IRegisterRequest) => {
     const user = await User.findOne({ username: registerRequest.username })
 
     if (user) {

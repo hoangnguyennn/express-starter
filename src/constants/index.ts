@@ -1,5 +1,11 @@
-import { IFieldAndSortField } from '~/interfaces'
-import { DataListSortDirection } from '~/interfaces/enums'
+export enum CollectionNames {
+  USER = 'users'
+}
+
+export enum DataListSortDirection {
+  ASCEND = 'ascend',
+  DESCEND = 'descend'
+}
 
 export const DATA_LIST_LIMIT_DEFAULT = 0
 
@@ -9,4 +15,4 @@ export const DATA_LIST_SORT_BY_DEFAULT = null
 
 export const DATA_LIST_SORT_DIRECTION_DEFAULT = DataListSortDirection.ASCEND
 
-export const LIST_OF_FIELDS_AND_SORT_FIELDS: IFieldAndSortField[] = []
+export const LIST_OF_FIELDS_AND_SORT_FIELDS: Types.IFieldAndSortField[] = []
