@@ -11,6 +11,11 @@
     "lint:fix": "yarn lint --fix",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "yarn lint:fix"
+    ]
+  },
   "dependencies": {
     "bcrypt": "5.1.0",
     "celebrate": "15.0.1",
