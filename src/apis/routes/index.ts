@@ -1,4 +1,5 @@
 import { Router } from 'express'
+
 import authRoute from './auth.route'
 import uploadRoute from './upload.route'
 import userRoute from './user.route'

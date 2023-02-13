@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  DataListSortDirection,
   DATA_LIST_LIMIT_DEFAULT,
   DATA_LIST_OFFSET_DEFAULT,
   DATA_LIST_SORT_BY_DEFAULT,
   DATA_LIST_SORT_DIRECTION_DEFAULT,
+  DataListSortDirection,
   LIST_OF_FIELDS_AND_SORT_FIELDS
 } from '@hn/constants'
 

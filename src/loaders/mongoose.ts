@@ -1,5 +1,6 @@
-import env from '@hn/configs/env'
 import mongoose from 'mongoose'
+
+import env from '@hn/configs/env'
 
 export default async () => {
   console.log('MongoDB is connecting...')

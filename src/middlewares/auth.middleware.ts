@@ -1,6 +1,7 @@
+import { NextFunction, Request, Response } from 'express'
+
 import { forbidden, unauthorized } from '@hn/helpers/commonResponse'
 import tokenUtil from '@hn/utils/token.util'
-import { NextFunction, Request, Response } from 'express'
 
 export const checkAuth = async (
   req: Request,

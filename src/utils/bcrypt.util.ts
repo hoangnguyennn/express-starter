@@ -1,5 +1,6 @@
-import env from '@hn/configs/env'
 import bcrypt from 'bcrypt'
+
+import env from '@hn/configs/env'
 
 const getHashed = async (text: string) => {
   const saltRounds = Math.round(Math.random() * env.maxOfSalt)

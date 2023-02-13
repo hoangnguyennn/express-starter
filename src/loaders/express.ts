@@ -1,9 +1,10 @@
+import { errors } from 'celebrate'
+import { Application, json, urlencoded } from 'express'
+
 import apiRoutes from '@hn/apis/routes'
 import env from '@hn/configs/env'
 import errorHandler from '@hn/helpers/errorHandler'
 import healthcheck from '@hn/helpers/healthcheck'
-import { errors } from 'celebrate'
-import { Application, json, urlencoded } from 'express'
 
 export default async ({ app }: { app: Application }) => {
   // load middlewares
