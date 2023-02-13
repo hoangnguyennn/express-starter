@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {
   DataListSortDirection,
   DATA_LIST_LIMIT_DEFAULT,
@@ -7,7 +6,7 @@ import {
   DATA_LIST_SORT_BY_DEFAULT,
   DATA_LIST_SORT_DIRECTION_DEFAULT,
   LIST_OF_FIELDS_AND_SORT_FIELDS
-} from '~/constants'
+} from '@hn/constants'
 
 export const getLimit = (limit?: number): number => {
   return Number(getValue(limit, DATA_LIST_LIMIT_DEFAULT))

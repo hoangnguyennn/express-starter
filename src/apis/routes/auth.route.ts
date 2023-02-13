@@ -1,7 +1,7 @@
+import AuthController from '@hn/controllers/auth.controller'
+import catcherWrapper from '@hn/helpers/catcherWrapper'
+import { checkAuth } from '@hn/middlewares/auth.middleware'
 import { Router } from 'express'
-import AuthController from '~/apis/controllers/auth.controller'
-import catcherWrapper from '~/helpers/catcherWrapper'
-import { checkAuth } from '~/middlewares/auth.middleware'
 
 const router = Router()
 

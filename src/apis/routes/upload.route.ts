@@ -1,7 +1,7 @@
+import { upload } from '@hn/configs/uploadConfig'
+import UploadController from '@hn/controllers/upload.controller'
+import catcherWrapper from '@hn/helpers/catcherWrapper'
 import { Router } from 'express'
-import UploadController from '~/apis/controllers/upload.controller'
-import { upload } from '~/configs/uploadConfig'
-import catcherWrapper from '~/helpers/catcherWrapper'
 
 const router = Router()
 

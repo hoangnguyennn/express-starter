@@ -1,8 +1,8 @@
+import UserController from '@hn/controllers/user.controller'
+import catcherWrapper from '@hn/helpers/catcherWrapper'
+import { GET_USER_LIST_RULES } from '@hn/validations/user.validate'
 import { celebrate } from 'celebrate'
 import { Router } from 'express'
-import catcherWrapper from '~/helpers/catcherWrapper'
-import { GET_USER_LIST_RULES } from '~/validations/user.validate'
-import UserController from '../controllers/user.controller'
 
 const router = Router()
 

@@ -1,5 +1,5 @@
+import { CollectionNames } from '@hn/constants'
 import { Schema, model } from 'mongoose'
-import { CollectionNames } from '~/constants'
 
 const userSchema = new Schema<Types.IUser>(
   {

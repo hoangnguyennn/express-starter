@@ -1,7 +1,7 @@
-import { badRequest, notFound } from '~/helpers/commonResponse'
-import User from '~/models/user.model'
-import bcryptUtil from '~/utils/bcrypt.util'
-import tokenUtil from '~/utils/token.util'
+import { badRequest, notFound } from '@hn/helpers/commonResponse'
+import User from '@hn/models/user.model'
+import bcryptUtil from '@hn/utils/bcrypt.util'
+import tokenUtil from '@hn/utils/token.util'
 
 const AuthService = {
   login: async (loginRequest: Types.ILoginRequest) => {

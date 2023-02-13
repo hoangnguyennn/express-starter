@@ -1,7 +1,6 @@
+import env from '@hn/configs/env'
+import loaders from '@hn/loaders'
 import express from 'express'
-
-import loaders from '~/loaders'
-import env from '~/configs/env'
 
 const startServer = async () => {
   const app = express()
