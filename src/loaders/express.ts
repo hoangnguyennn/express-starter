@@ -5,6 +5,7 @@ import apiRoutes from '@hn/apis/routes'
 import env from '@hn/configs/env'
 import errorHandler from '@hn/helpers/errorHandler'
 import healthcheck from '@hn/helpers/healthcheck'
+import apiV2Route from '@hn/v2/routes'
 
 export default async ({ app }: { app: Application }) => {
   // load middlewares
@@ -16,6 +17,7 @@ export default async ({ app }: { app: Application }) => {
 
   // load routes
   app.use(env.apiPrefix, apiRoutes)
+  app.use(`${env.apiPrefix}/v2`, apiV2Route)
 
   // celebrate error handler
   app.use(errors())
