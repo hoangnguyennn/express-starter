@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   DATA_LIST_LIMIT_DEFAULT,
   DATA_LIST_OFFSET_DEFAULT,
@@ -36,6 +35,6 @@ export const getSortDirection = (direction?: DataListSortDirection) => {
   return 1
 }
 
-export const getValue = (value: any, defaultValue?: any) => {
+export const getValue = <T, K = undefined>(value: T, defaultValue?: K) => {
   return value ?? defaultValue
 }
