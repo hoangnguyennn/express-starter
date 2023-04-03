@@ -6,7 +6,7 @@
   "trailingComma": "none",
   "semi": false,
   "endOfLine": "lf",
-  "importOrder": ["^\\w$", "^@hn/(.*)$", "^[./]"],
+  "importOrder": ["^\\w$", "^@hn/(.*)$", "^\\./"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }
