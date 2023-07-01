@@ -11,7 +11,7 @@ phases:
       - yarn install
   build:
     commands:
-      - $BUILD_COMMAND
+      - yarn build
   post_build:
     commands:
       - echo
