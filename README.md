@@ -2,7 +2,7 @@
 
 ### Requirements
 
-- Install `node v14`
+- Install `node v18`
 - Install `yarn`
 
 ### Commands
