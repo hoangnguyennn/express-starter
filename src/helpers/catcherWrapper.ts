@@ -9,8 +9,6 @@ type AsyncController = (
 
 export default (controller: AsyncController) => {
   return async (req: Request, res: Response, next: NextFunction) => {
-    return controller(req, res, next).catch(error => {
-      next(error)
-    })
+    return controller(req, res, next).catch(next)
   }
 }
