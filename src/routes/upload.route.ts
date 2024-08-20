@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { upload } from '@hn/configs/uploadConfig'
+import { upload } from '@hn/configs/upload'
 import UploadController from '@hn/controllers/upload.controller'
 import catcherWrapper from '@hn/helpers/catcherWrapper'
 

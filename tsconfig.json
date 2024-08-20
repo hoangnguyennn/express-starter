@@ -4,9 +4,9 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@hn/*": ["./src/*"],
-      "@hn/controllers/*": ["./src/apis/controllers/*"],
-      "@hn/routes/*": ["./src/apis/routes/*"]
+      "@hn/*": ["src/*"],
+      "@hn/controllers/*": ["src/controllers/*"],
+      "@hn/routes/*": ["src/routes/*"]
     },
     "skipLibCheck": true,
     "strict": true
