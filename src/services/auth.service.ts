@@ -4,14 +4,16 @@ import { LoginRequest, RegisterRequest } from '@hn/types/request'
 import bcryptUtil from '@hn/utils/bcrypt.util'
 import tokenUtil from '@hn/utils/token.util'
 
-const login = async (loginRequest: LoginRequest) => {
-  const user = await UserModel.findOne({ username: loginRequest.username })
+const login = async ({ username, password }: LoginRequest) => {
+  const user = await UserModel.findOne({ username: username })
 
   if (!user) {
     return notFound('User not found')
   }
 
-  if (!bcryptUtil.equal(loginRequest.password, user.hashedPassword)) {
+  const isEqual = await bcryptUtil.equal(password, user.hashedPassword)
+
+  if (!isEqual) {
     return badRequest('Password is incorrect')
   }
 
@@ -19,19 +21,15 @@ const login = async (loginRequest: LoginRequest) => {
   return { token }
 }
 
-const register = async (registerRequest: RegisterRequest) => {
-  const user = await UserModel.findOne({ username: registerRequest.username })
+const register = async ({ username, password, fullName }: RegisterRequest) => {
+  const user = await UserModel.findOne({ username })
 
   if (user) {
     return badRequest('User already exists')
   }
 
-  const hashedPassword = await bcryptUtil.getHashed(registerRequest.password)
-  const newUser = await UserModel.create({
-    username: registerRequest.username,
-    hashedPassword,
-    fullName: registerRequest.fullName
-  })
+  const hashedPassword = await bcryptUtil.getHashed(password)
+  const newUser = await UserModel.create({ username, hashedPassword, fullName })
 
   const token = tokenUtil.generateToken({ userId: newUser._id.toString() })
   return { token }
