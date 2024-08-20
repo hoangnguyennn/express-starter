@@ -1,12 +1,10 @@
 {
+  "plugins": ["prettier-plugin-organize-imports"],
   "singleQuote": true,
   "useTabs": false,
   "tabWidth": 2,
   "arrowParens": "avoid",
   "trailingComma": "none",
   "semi": false,
-  "endOfLine": "lf",
-  "importOrder": ["^\\w$", "^@hn/(.*)$", "^\\./"],
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "endOfLine": "lf"
 }

@@ -6,8 +6,7 @@
     "paths": {
       "@hn/*": ["./src/*"],
       "@hn/controllers/*": ["./src/apis/controllers/*"],
-      "@hn/routes/*": ["./src/apis/routes/*"],
-      "@hn/v2/*": ["./src/apis/v2/*"]
+      "@hn/routes/*": ["./src/apis/routes/*"]
     },
     "skipLibCheck": true,
     "strict": true

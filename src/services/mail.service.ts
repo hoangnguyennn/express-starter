@@ -1,6 +1,6 @@
+import config from '@hn/configs/env'
 import { createTransport } from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer'
-import config from '@hn/configs/env'
 
 const transport = createTransport({
   host: config.mailHost,
