@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-
 import catcherWrapper from './catcherWrapper'
 import { success } from './commonResponse'
 

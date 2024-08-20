@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextFunction, Request, Response } from 'express'
-
 import { HttpError } from './commonResponse'
 
 const isDev = process.env.NODE_ENV !== 'production'

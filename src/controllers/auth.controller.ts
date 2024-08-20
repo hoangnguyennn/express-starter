@@ -1,8 +1,7 @@
-import { Request, Response } from 'express'
-
 import { success } from '@hn/helpers/commonResponse'
 import { mapUserToResponse } from '@hn/helpers/mapDataToResponse'
 import AuthService from '@hn/services/auth.service'
+import { Request, Response } from 'express'
 
 const AuthController = {
   login: async (req: Request, res: Response) => {

@@ -1,6 +1,5 @@
-import jwt from 'jsonwebtoken'
-
 import env from '@hn/configs/env'
+import jwt from 'jsonwebtoken'
 
 const generateToken = (payload: Types.ITokenPayload) => {
   return jwt.sign(payload, env.tokenSecret, { expiresIn: env.tokenExpiresIn })

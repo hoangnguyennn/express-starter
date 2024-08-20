@@ -1,5 +1,3 @@
-import { PipelineStage } from 'mongoose'
-
 import User from '@hn/models/user.model'
 import {
   getLimit,
@@ -8,6 +6,7 @@ import {
   getSortDirection,
   getValue
 } from '@hn/utils/getter.util'
+import { PipelineStage } from 'mongoose'
 
 const UserService = {
   getList: async (dataListFilter: Types.IUserFilter) => {

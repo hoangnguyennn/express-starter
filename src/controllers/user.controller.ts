@@ -1,8 +1,7 @@
-import { Request, Response } from 'express'
-
 import { success } from '@hn/helpers/commonResponse'
 import { mapUserToResponse } from '@hn/helpers/mapDataToResponse'
 import UserService from '@hn/services/user.service'
+import { Request, Response } from 'express'
 
 const UserController = {
   getList: async (req: Request, res: Response) => {
