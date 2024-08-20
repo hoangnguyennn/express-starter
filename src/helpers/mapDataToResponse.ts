@@ -1,4 +1,7 @@
-export const mapUserToResponse = (user: Types.IUser): Types.IUserResponse => {
+import { UserResponse } from '@hn/types'
+import { User } from '@hn/types/model'
+
+export const mapUserToResponse = (user: User): UserResponse => {
   return {
     id: user._id.toString(),
     username: user.username,

@@ -11,7 +11,7 @@ const transport = createTransport({
   }
 })
 
-const MailService = {
+export const MailService = {
   sendMail: async ({ from, to, subject, html }: Mail.Options) => {
     return transport.sendMail({
       from, // sender address
@@ -21,5 +21,3 @@ const MailService = {
     })
   }
 }
-
-export default MailService

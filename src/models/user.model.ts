@@ -1,7 +1,8 @@
-import { CollectionNames } from '@hn/constants'
+import { CollectionName } from '@hn/constants'
+import { User } from '@hn/types/model'
 import { Schema, model } from 'mongoose'
 
-const userSchema = new Schema<Types.IUser>(
+const userSchema = new Schema<User>(
   {
     username: { type: String, required: true },
     hashedPassword: { type: String, required: true },
@@ -18,4 +19,4 @@ const userSchema = new Schema<Types.IUser>(
 
 userSchema.index({ fullName: 'text' })
 
-export default model<Types.IUser>(CollectionNames.USER, userSchema)
+export const UserModel = model(CollectionName.USER, userSchema)

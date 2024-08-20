@@ -1,13 +1,14 @@
 import env from '@hn/configs/env'
+import { Nullable, TokenPayload } from '@hn/types'
 import jwt from 'jsonwebtoken'
 
-const generateToken = (payload: Types.ITokenPayload) => {
+const generateToken = (payload: TokenPayload) => {
   return jwt.sign(payload, env.tokenSecret, { expiresIn: env.tokenExpiresIn })
 }
 
-const decodeToken = (token: string): Types.Nullable<Types.ITokenPayload> => {
+const decodeToken = (token: string): Nullable<TokenPayload> => {
   try {
-    const decoded = jwt.verify(token, env.tokenSecret) as Types.ITokenPayload
+    const decoded = jwt.verify(token, env.tokenSecret) as TokenPayload
     return decoded
   } catch {
     return null
