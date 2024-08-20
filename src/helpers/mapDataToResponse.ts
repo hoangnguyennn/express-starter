@@ -1,5 +1,5 @@
-import { UserResponse } from '@hn/types'
 import { User } from '@hn/types/model'
+import { UserResponse } from '@hn/types/response'
 
 export const mapUserToResponse = (user: User): UserResponse => {
   return {

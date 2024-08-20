@@ -1,7 +1,7 @@
 import { success } from '@hn/helpers/commonResponse'
 import { mapUserToResponse } from '@hn/helpers/mapDataToResponse'
 import { AuthService } from '@hn/services/auth.service'
-import { LoginRequest, RegisterRequest } from '@hn/types'
+import { LoginRequest, RegisterRequest } from '@hn/types/request'
 import { Request, Response } from 'express'
 
 const AuthController = {

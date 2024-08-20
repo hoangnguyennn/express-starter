@@ -1,6 +1,6 @@
 import { badRequest, notFound } from '@hn/helpers/commonResponse'
 import { UserModel } from '@hn/models/user.model'
-import { LoginRequest, RegisterRequest } from '@hn/types'
+import { LoginRequest, RegisterRequest } from '@hn/types/request'
 import bcryptUtil from '@hn/utils/bcrypt.util'
 import tokenUtil from '@hn/utils/token.util'
 

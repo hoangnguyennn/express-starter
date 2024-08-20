@@ -1,5 +1,6 @@
 import env from '@hn/configs/env'
-import { Nullable, TokenPayload } from '@hn/types'
+import { TokenPayload } from '@hn/types'
+import { Nullable } from '@hn/types/utils'
 import jwt from 'jsonwebtoken'
 
 const generateToken = (payload: TokenPayload) => {
